@@ -2,10 +2,10 @@ const myImage = document.querySelector("img");
 
 myImage.onclick = () => {
   const mySrc = myImage.getAttribute("src");
-  if (mySrc === "/Users/perryvandermeulen/Desktop/web-dev-projects/test-site-book-reviews/images/delillo-cosmopolis.jpg") {
-    myImage.setAttribute("src", "/Users/perryvandermeulen/Desktop/web-dev-projects/test-site-book-reviews/images/delillo-cosmopolis2.jpg");
+  if (mySrc === "/images/delillo-cosmopolis.jpg") {
+    myImage.setAttribute("src", "/images/delillo-cosmopolis2.jpg");
   } else {
-    myImage.setAttribute("src", "/Users/perryvandermeulen/Desktop/web-dev-projects/test-site-book-reviews/images/delillo-cosmopolis.jpg");
+    myImage.setAttribute("src", "/images/delillo-cosmopolis.jpg");
   }
 };
 let myButton = document.querySelector("button");

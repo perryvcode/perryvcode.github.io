@@ -3,9 +3,9 @@ const myImage = document.querySelector("img");
 myImage.onclick = () => {
   const mySrc = myImage.getAttribute("src");
   if (mySrc === "/images/delillo-cosmopolis.jpg") {
-    myImage.setAttribute("src", "https://github.com/perryvcode/perryvcode.github.io/blob/main/test-site-book-reviews/images/delillo-cosmopolis2.jpg");
+    myImage.setAttribute("src", "/images/delillo-cosmopolis2.jpg");
   } else {
-    myImage.setAttribute("src", "https://github.com/perryvcode/perryvcode.github.io/blob/main/test-site-book-reviews/images/delillo-cosmopolis.jpg");
+    myImage.setAttribute("src", "/images/delillo-cosmopolis.jpg");
   }
 };
 let myButton = document.querySelector("button");

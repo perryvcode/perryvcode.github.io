@@ -11,6 +11,12 @@ h1 {
     color: #F990E8;
     text-shadow: 3px 3px 1px black;
 }
+h2 {
+    font-size: 20px;
+}
+h3 {
+    font-size: 16px;
+}
 p,
 li {
     font-size: 12px;
@@ -28,5 +34,17 @@ img {
     display: block;
     margin: 0px auto;
   }
+blockquote {
+    margin: 0;
+  }
   
+blockquote p {
+    padding: 15px;
+    background: #F990E8;
+    border-radius: 5px;
+    box-shadow: 3px 3px 1px black;
+  }  
+blockquote footer {
+    padding: 10px;
+}
   

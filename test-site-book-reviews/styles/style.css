@@ -1,5 +1,5 @@
 html {
-    font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high */
+    font-size: 12px; /* px means "pixels": the base font size is now 10 pixels high */
     font-family: 'Inter', sans-serif; /* this should be the rest of the output you got from Google Fonts */
     background-color: #0BD2D3;
   }
@@ -17,11 +17,9 @@ h2 {
 h3 {
     font-size: 16px;
 }
-p,
 li {
     font-size: 12px;
-    line-height: 2;
-    letter-spacing: 1px;
+    line-height: 1.5;
 }
 body {
     width: 600px;
@@ -47,4 +45,43 @@ blockquote p {
 blockquote footer {
     padding: 10px;
 }
+
+hr.section-end {
+    color: #F990E8;
+    width: 50%;
+}
+
+hr.section-end-two {
+    color:#0BD2D3
+}
+
+video {
+    display: block;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: inline;
+    padding-left: 0px;
+}
+
+.nav-links li {
+    list-style-type: none;
+    display: inline;
+    
+}
+
+.nav-links a {
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    border: 5px dotted #0BD2D3;
+    border-radius: 10px;
+  }
   
+  .nav-links a:hover {
+    background-color: #F990E8;
+    color: #fff;
+  }

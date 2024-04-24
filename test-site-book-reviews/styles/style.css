@@ -17,6 +17,9 @@ h2 {
 h3 {
     font-size: 16px;
 }
+p {
+    line-height: 1.5;
+}
 li {
     font-size: 12px;
     line-height: 1.5;
@@ -32,6 +35,10 @@ img {
     display: block;
     margin: 0px auto;
   }
+.imgfloat {
+    float: left;
+    margin-right: 30px;
+}
 blockquote {
     margin: 0;
   }
@@ -61,27 +68,28 @@ video {
 }
 
 .nav-links {
-    display: inline;
-    padding-left: 0px;
-}
-
-.nav-links li {
-    list-style-type: none;
-    display: inline;
-    
+    display: flex;
+    gap: 0.625%;
 }
 
 .nav-links a {
     background-color: #fff;
     color: #000;
     text-decoration: none;
+    text-align: center;
     padding: 10px;
-    display: inline-block;
+    flex: 1;
     border: 5px dotted #0BD2D3;
     border-radius: 10px;
-  }
+}
   
-  .nav-links a:hover {
+.nav-links a:hover {
     background-color: #F990E8;
     color: #fff;
-  }
+}
+
+.nav-links a:active {
+    background-color: #0BD2D3;
+    border: 5px #F990E8;
+    border-style: dotted dashed solid double;
+}

@@ -1,7 +1,7 @@
 // ============================
 // Anita Hagh Personal Site JS
 // Mobile + Desktop Compatible
-// Smooth Expand/Collapse + Touch Hover
+// Fixed Expand/Collapse Button Logic
 // ============================
 
 // ---------- IMAGE HOVER HANDLER ----------
@@ -29,8 +29,20 @@ const hiddenRows = document.querySelector('#hiddenRows');
 if (expandButton && hiddenRows) {
   let expanded = false;
 
-  // Initial state
+  // Initialize collapsed
   hiddenRows.classList.add('collapsed');
+
+  const updateButtonImage = (hovering = false) => {
+    if (expanded) {
+      expandButton.src = hovering
+        ? expandButton.dataset.activeHover
+        : expandButton.dataset.active;
+    } else {
+      expandButton.src = hovering
+        ? expandButton.dataset.hover
+        : 'images/show-more-button.png';
+    }
+  };
 
   expandButton.addEventListener('click', () => {
     expanded = !expanded;
@@ -38,30 +50,26 @@ if (expandButton && hiddenRows) {
     if (expanded) {
       hiddenRows.classList.remove('collapsed');
       hiddenRows.classList.add('expanded');
-      expandButton.src = expandButton.dataset.active;
     } else {
       hiddenRows.classList.remove('expanded');
       hiddenRows.classList.add('collapsed');
-      expandButton.src = 'images/show-more-button.png';
     }
+
+    // Always update button image state correctly
+    updateButtonImage(false);
   });
 
-  // Hover effects for expand button
+  // Hover effects (desktop)
   expandButton.addEventListener('mouseenter', () => {
-    if (window.matchMedia('(hover: hover)').matches) {
-      expandButton.src = expanded
-        ? expandButton.dataset.activeHover
-        : expandButton.dataset.hover;
-    }
+    if (window.matchMedia('(hover: hover)').matches) updateButtonImage(true);
+  });
+  expandButton.addEventListener('mouseleave', () => {
+    if (window.matchMedia('(hover: hover)').matches) updateButtonImage(false);
   });
 
-  expandButton.addEventListener('mouseleave', () => {
-    if (window.matchMedia('(hover: hover)').matches) {
-      expandButton.src = expanded
-        ? expandButton.dataset.active
-        : 'images/show-more-button.png';
-    }
-  });
+  // Touch support: make sure correct image stays after tap
+  expandButton.addEventListener('touchstart', () => updateButtonImage(true));
+  expandButton.addEventListener('touchend', () => setTimeout(() => updateButtonImage(false), 200));
 }
 
 // ---------- SMOOTH SCROLLING ----------
